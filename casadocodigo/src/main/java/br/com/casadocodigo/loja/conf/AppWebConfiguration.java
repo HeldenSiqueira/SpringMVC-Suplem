@@ -6,11 +6,10 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import br.com.casadocodigo.loja.controllers.HomeController;
-import br.com.casadocodigo.loja.daos.ProdutoDAO;
+import br.com.casadocodigo.loja.dao.ProdutoDAO;
 
-//configuramos para o Spring encontrar nossos controllers. Nós vamos configurar para que encontre nossos daos também.
 @EnableWebMvc
-@ComponentScan(basePackageClasses={HomeController.class, ProdutoDAO.class})
+@ComponentScan(basePackageClasses= {HomeController.class, ProdutoDAO.class})
 public class AppWebConfiguration {
 	
 	@Bean
@@ -22,3 +21,4 @@ public class AppWebConfiguration {
 	}
 
 }
+	
