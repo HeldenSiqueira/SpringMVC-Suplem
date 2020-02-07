@@ -85,7 +85,7 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 				TimeUnit.MINUTES);
 		GuavaCacheManager manager = new GuavaCacheManager();
 		manager.setCacheBuilder(builder);
-		return manager;
+		return  manager; //new ConcurrentMapCacheManager();
 	}
 	
 	@Bean

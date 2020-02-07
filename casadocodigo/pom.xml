@@ -9,11 +9,27 @@
     <finalName>casadocodigo</finalName>
   </build>
   
+   <properties>
+    <failOnMissingWebXml>false</failOnMissingWebXml>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    
+    <spring.version>4.1.0.RELEASE</spring.version>
+    <spring.security.version>4.0.0.RELEASE</spring.security.version>
+    
+	<!-- https://docs.spring.io/spring-security/site/docs/4.2.6.RELEASE/reference/htmlsingle/#maven-bom -->
+	<!-- <spring.version>4.3.17.RELEASE</spring.version> -->
+	<!-- <spring.security.version>4.2.6.RELEASE</spring.security.version> -->
+    <hibernate.version>4.3.11.Final</hibernate.version>
+    <mysql.connector.version>5.1.46</mysql.connector.version>
+  </properties>
+  
   <dependencies>
     <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-webmvc</artifactId>
-        <version>4.1.0.RELEASE</version>
+        <version>${spring.version}</version>
     </dependency>
     <dependency>
         <groupId>org.apache.tomcat</groupId>
@@ -27,6 +43,7 @@
         <version>2.1</version>
         <scope>provided</scope>
     </dependency>
+    
     <dependency>
         <groupId>javax.servlet.jsp.jstl</groupId>
         <artifactId>jstl-api</artifactId>
@@ -38,6 +55,7 @@
             </exclusion>
         </exclusions>
     </dependency>
+    
     <dependency>
         <groupId>org.glassfish.web</groupId>
         <artifactId>jstl-impl</artifactId>
@@ -73,15 +91,17 @@
         <version>1.2.16</version>
         <scope>runtime</scope>
     </dependency>
+    
+	<!-- dependencias hibernate e jpa -->
     <dependency>
 	    <groupId>org.hibernate</groupId>
 	    <artifactId>hibernate-entitymanager</artifactId>
-	    <version>4.3.0.Final</version>
+	    <version>${hibernate.version}</version>
 	</dependency>
 	<dependency>
 	    <groupId>org.hibernate</groupId>
 	    <artifactId>hibernate-core</artifactId>
-	    <version>4.3.0.Final</version>
+	    <version>${hibernate.version}</version>
 	</dependency>
 	<dependency>
 	    <groupId>org.hibernate.javax.persistence</groupId>
@@ -91,14 +111,17 @@
 	<dependency>
 	    <groupId>org.springframework</groupId>
 	    <artifactId>spring-orm</artifactId>
-	    <version>4.1.0.RELEASE</version>
+	    <version>${spring.version}</version>
 	</dependency>
+	
+	<!-- dependencia driver mysql -->
 	<dependency>
 	    <groupId>mysql</groupId>
 	    <artifactId>mysql-connector-java</artifactId>
-	    <version>5.1.15</version>
+	    <version>${mysql.connector.version}</version>
 	</dependency>
 	
+	<!-- dependencias da api de validação -->
 	<dependency>
 	    <groupId>javax.validation</groupId>
 	    <artifactId>validation-api</artifactId>
@@ -107,9 +130,10 @@
 	<dependency>
 	    <groupId>org.hibernate</groupId>
 	    <artifactId>hibernate-validator</artifactId>
-	    <version>4.2.0.Final</version>
+	    <version>4.3.2.Final</version>
 	</dependency>
 	
+	<!-- dependencias para trabalhar com json -->
 	<dependency>
 	    <groupId>com.fasterxml.jackson.core</groupId>
 	    <artifactId>jackson-core</artifactId>
@@ -121,24 +145,41 @@
 	    <version>2.5.1</version>
 	</dependency>
 	
+	<!-- dependencias do guava (cache) -->
 	<dependency>
 	    <groupId>com.google.guava</groupId>
 	    <artifactId>guava</artifactId>
-	    <version>18.0</version>
+	    <version>25.0-jre</version>
 	</dependency>
 	
 	<dependency>
 	    <groupId>org.springframework</groupId>
 	    <artifactId>spring-context-support</artifactId>
-	    <version>4.1.0.RELEASE</version>
+	    <version>${spring.version}</version>
+	</dependency>
+	
+	<!-- dependencias do spring security -->
+	<dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-config</artifactId>
+        <version>${spring.security.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-taglibs</artifactId>
+        <version>${spring.security.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-web</artifactId>
+        <version>${spring.security.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-core</artifactId>
+        <version>${spring.security.version}</version>
 	</dependency>
 
-</dependencies>
+</dependencies>	
   
-  <properties>
-    <failOnMissingWebXml>false</failOnMissingWebXml>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
 </project>
