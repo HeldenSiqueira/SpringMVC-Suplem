@@ -180,6 +180,13 @@
         <version>${spring.security.version}</version>
 	</dependency>
 	
+	<!-- dependencias email -->
+	<dependency>
+	    <groupId>javax.mail</groupId>
+	    <artifactId>mail</artifactId>
+	    <version>1.4.7</version>
+	</dependency>
+	
 	<!-- dependencias de teste -->
 	<dependency>
 	    <groupId>junit</groupId>
